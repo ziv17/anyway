@@ -3,7 +3,8 @@
 /new_local.db
 /envit.sh
 /local.db-journal
-pyvenv.cfg.
+pyvenv.cfg
+Scripts
 # compiled code
 *.py[cod]
 
