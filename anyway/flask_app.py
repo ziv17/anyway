@@ -1612,6 +1612,12 @@ def infographics_data():
                                        'meta': {}}
     output['widgets'].append(accident_count_by_accident_type)
 
+    # accident count per day_night
+    accident_count_per_day_night = {'name': 'accident_count_per_day_night',
+                                      'data': get_accidents_stats(table_obj=AccidentMarkerView, filters=location_info, group_by='day_night_hebrew', count='day_night_hebrew', start_time=start_time, end_time=end_time),
+                                       'meta': {}}
+    output['widgets'].append(accident_count_per_day_night)
+
     # accident count by accident year
     accident_count_by_accident_year = {'name': 'accident_count_by_accident_year',
                                        'data': get_accidents_stats(table_obj=AccidentMarkerView, filters=location_info, group_by='accident_year', count='accident_year', start_time=start_year, end_time=end_year),
