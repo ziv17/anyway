@@ -5,6 +5,7 @@ import pandas as pd
 from flask_sqlalchemy import SQLAlchemy
 
 from anyway.utilities import init_flask
+from anyway.parsers import infographics_data_cache_updater
 from . import timezones
 from ..models import NewsFlash
 
@@ -102,6 +103,8 @@ class DBAdapter:
                      .format(newsflash.accident, newsflash.date))
         self.db.session.add(newsflash)
         self.db.session.commit()
+        infographics_data_cache_updater.add_news_flash_to_cache(newsflash)
+        logging.debug(f"{newsflash.get_id()} added to cache")
 
     def update_news_flash_bulk(self, news_flash_id_list, params_dict_list):
         if len(news_flash_id_list) > 0 and len(news_flash_id_list) == len(params_dict_list):
