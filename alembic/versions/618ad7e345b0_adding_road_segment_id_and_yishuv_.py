@@ -21,10 +21,12 @@ def upgrade():
     op.add_column('news_flash', sa.Column('road_segment_id', sa.Integer(), nullable=True))
     op.add_column('news_flash', sa.Column('street1', sa.Integer(), nullable=True))
     op.add_column('news_flash', sa.Column('street2', sa.Integer(), nullable=True))
+    op.add_column('news_flash', sa.Column('non_urban_intersection', sa.Integer(), nullable=True))
     op.add_column('cbs_locations', sa.Column('yishuv_symbol', sa.Integer(), nullable=True))
     op.add_column('cbs_locations', sa.Column('road_segment_id', sa.Integer(), nullable=True))
     op.add_column('cbs_locations', sa.Column('street1', sa.Integer(), nullable=True))
     op.add_column('cbs_locations', sa.Column('street2', sa.Integer(), nullable=True))
+    op.add_column('cbs_locations', sa.Column('non_urban_intersection', sa.Integer(), nullable=True))
 
 
 def downgrade():

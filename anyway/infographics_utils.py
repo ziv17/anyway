@@ -240,7 +240,7 @@ class AccidentCountBySeverityWidget(SubUrbanWidget):
     @staticmethod
     def get_accident_count_by_severity(location_info, start_time, end_time):
         count_by_severity = get_accidents_stats(
-            table_obj=get_small_accident_marker_view(),
+            table_obj=AccidentMarkerView,
             filters=location_info,
             group_by="accident_severity",
             count="accident_severity",

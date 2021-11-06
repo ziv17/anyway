@@ -237,6 +237,12 @@ def main(update, info):
         logging.info(get_cache_info())
     else:
         logging.debug(f"{info}")
+        nfs = db.session.query(RoadSegments)\
+            .filter(RoadSegments.from_name == 'מחלף קיבוץ גלויות')\
+            .filter(RoadSegments.to_name == 'מחלף גנות')\
+            .first()
+        logging.debug(f"nfs:{nfs.segment_id}")
+        return
         from anyway.infographics_utils import (
             create_infographics_data,
             widget_calc_times,

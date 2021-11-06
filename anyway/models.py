@@ -840,6 +840,7 @@ class NewsFlash(Base):
     street1_hebrew = Column(Text(), nullable=True)
     street2 = Column(Integer(), nullable=True)
     street2_hebrew = Column(Text(), nullable=True)
+    non_urban_intersection = Column(Integer(), nullable=True)
     non_urban_intersection_hebrew = Column(Text(), nullable=True)
     road_segment_name = Column(Text(), nullable=True)
     road_segment_id = Column(Integer(), nullable=True)

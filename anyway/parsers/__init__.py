@@ -9,7 +9,7 @@ resolution_dict = {
         "road1",
         "road_segment_id",
         "road2",
-        "non_urban_intersection_hebrew",
+        "non_urban_intersection",
     ],
     "אחר": [
         "region_hebrew",
